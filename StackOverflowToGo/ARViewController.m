@@ -8,6 +8,7 @@
 
 #import "ARViewController.h"
 #import "ARSearchResult.h"
+#import "ARWebViewController.h"
 
 @interface ARViewController () <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
 
@@ -26,6 +27,8 @@
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _searchBar.delegate = self;
+    
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
 
     _searchResultsArray = [NSMutableArray new];
     
@@ -58,38 +61,7 @@
             }];
             completionBlock(tempArray);
         }
-        
-        //        if ([resultReposArray isKindOfClass:[NSMutableArray class]]) {
-        //            for (NSDictionary *tempDict in resultReposArray) {
-        //                ARRepo *repo = [[ARRepo alloc] initWithName:tempDict];
-        //                [tempReposArray addObject:repo];
-        //            }
-        //            completionBlock(tempReposArray);
-        //        }
-        
     }];
-    
-    //    dispatch_queue_t downloadQueue = dispatch_queue_create("com.Rivera.Anton.downloadQueue", NULL);
-    //    dispatch_async(downloadQueue, ^{
-    //        NSString *searchURLString = [NSString stringWithFormat:@"https://api.github.com/search/repositories?q=%@", query];
-    //        NSURL *searchURL = [NSURL URLWithString:searchURLString];
-    //        NSData *searchData = [NSData dataWithContentsOfURL:searchURL];
-    //        NSDictionary *searchDict = [NSJSONSerialization JSONObjectWithData:searchData
-    //                                                                   options:NSJSONReadingMutableContainers
-    //                                                                     error:nil];
-    //
-    //        NSMutableArray *tempRepos = [NSMutableArray new];
-    //
-    //        for (NSDictionary *repo in [searchDict objectForKey:@"items"]) {
-    //            ARRepo *downloadedRepo = [[ARRepo alloc] initWithJSON:repo];
-    //            [tempRepos addObject:downloadedRepo];
-    //        }
-    //
-    //        if ([tempRepos isKindOfClass:[NSMutableArray class]]){
-    //            
-    //            completionBlock(tempRepos);
-    //        }
-    //    });
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
@@ -123,6 +95,22 @@
     }];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"showWebView"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        ARSearchResult *searchResult = [_searchResultsArray objectAtIndex:indexPath.row];
+        ARWebViewController *wvc = (ARWebViewController *)segue.destinationViewController;
+        
+        wvc.link = searchResult.link;
+    }
 }
 
 @end

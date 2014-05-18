@@ -22,6 +22,7 @@
 		3A6337C819284B2C00C6F072 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A6337C619284B2C00C6F072 /* InfoPlist.strings */; };
 		3A6337CA19284B2C00C6F072 /* StackOverflowToGoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6337C919284B2C00C6F072 /* StackOverflowToGoTests.m */; };
 		3A6337D51928514400C6F072 /* ARSearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6337D41928514400C6F072 /* ARSearchResult.m */; };
+		3A6337D81928551D00C6F072 /* ARWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6337D71928551D00C6F072 /* ARWebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		3A6337C919284B2C00C6F072 /* StackOverflowToGoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StackOverflowToGoTests.m; sourceTree = "<group>"; };
 		3A6337D31928514400C6F072 /* ARSearchResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARSearchResult.h; sourceTree = "<group>"; };
 		3A6337D41928514400C6F072 /* ARSearchResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARSearchResult.m; sourceTree = "<group>"; };
+		3A6337D61928551D00C6F072 /* ARWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARWebViewController.h; sourceTree = "<group>"; };
+		3A6337D71928551D00C6F072 /* ARWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARWebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +125,8 @@
 				3A6337B019284B2C00C6F072 /* Main.storyboard */,
 				3A6337B319284B2C00C6F072 /* ARViewController.h */,
 				3A6337B419284B2C00C6F072 /* ARViewController.m */,
+				3A6337D61928551D00C6F072 /* ARWebViewController.h */,
+				3A6337D71928551D00C6F072 /* ARWebViewController.m */,
 				3A6337B619284B2C00C6F072 /* Images.xcassets */,
 				3A6337A519284B2C00C6F072 /* Supporting Files */,
 			);
@@ -256,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A6337AB19284B2C00C6F072 /* main.m in Sources */,
+				3A6337D81928551D00C6F072 /* ARWebViewController.m in Sources */,
 				3A6337B519284B2C00C6F072 /* ARViewController.m in Sources */,
 				3A6337AF19284B2C00C6F072 /* ARAppDelegate.m in Sources */,
 				3A6337D51928514400C6F072 /* ARSearchResult.m in Sources */,
@@ -463,6 +469,7 @@
 				3A6337CF19284B2C00C6F072 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3A6337D019284B2C00C6F072 /* Build configuration list for PBXNativeTarget "StackOverflowToGoTests" */ = {
 			isa = XCConfigurationList;
@@ -471,6 +478,7 @@
 				3A6337D219284B2C00C6F072 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
